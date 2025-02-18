@@ -34,6 +34,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func generateTimesTable(_ sender: UIButton) {
         guard let inputText = numberTextField.text, let number = Int(inputText) else {
+            // Alert if not valid number
+            let alert = UIAlertController(title: "Invalid input", message: "Please enter an integer number.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
             return
         }
         
